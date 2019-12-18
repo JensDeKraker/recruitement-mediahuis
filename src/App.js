@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ApolloProvider } from 'react-apollo';
 import client from './graphql';
 import { PokemonDetail, PokemonSearch, Squad } from './components';
 import { Container, Logo, Pokedex, Upper } from './app.styled';
 
 const App = () => {
+  const [selectedPokemon, setSelectedPokemon] = useState([]);
+  const [squad, setSquad] = useState([]);
   return (
     <ApolloProvider client={client}>
       <Container>
