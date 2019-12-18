@@ -6,7 +6,7 @@ import { SearchContainer, SearchInput, PokemonName } from './pokemonsearch.style
 import { Title } from '../';
 import translations from '../../utils/en.json';
 
-const PokemonSearch = () => {
+const PokemonSearch = ({ setSelectedPokemon }) => {
   const { loading, error, data } = useQuery(GET_POKEMON);
 
   if (loading) return <p>{translations.LOADING}</p>;
@@ -19,7 +19,7 @@ const PokemonSearch = () => {
   return (
     <SearchContainer>
       <Title>{translations.SELECT_POKEMON}</Title>
-      <Downshift onChange={pokemon => console.log(pokemon)} itemToString={item => (item ? item.name : '')}>
+      <Downshift onChange={pokemon => setSelectedPokemon(pokemon)} itemToString={item => (item ? item.name : '')}>
         {({ getInputProps, getItemProps, inputValue }) => (
           <div>
             <SearchInput placeholder='TYPE TO FILTER' {...getInputProps()} />

@@ -5,7 +5,7 @@ export const GET_POKEMON_BY_NAME = gql`
     Pokemon(name: $name) {
       name
       image
-      types(first: 1) {
+      types(first: 0) {
         name
       }
       stats {
