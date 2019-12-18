@@ -1,0 +1,12 @@
+{
+  "EMPTY": "Empty",
+  "LOADING": "...loading",
+  "NO_POKEMON_FOUND": "No pokemon where found",
+  "PLACEHOLDER": "Type to filter",
+  "POKEMON": "Pokemon",
+  "SAVE_POKEMON": "Save pokemon",
+  "SELECT_POKEMON": "Select a pokemon",
+  "SELECTED_MOVES": "Selected moves",
+  "SELECTED_SQUAD": "Selected squad",
+  "STATS": "Stats"
+}
