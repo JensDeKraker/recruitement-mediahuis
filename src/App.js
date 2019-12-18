@@ -7,6 +7,7 @@ import { Container, Logo, Pokedex, Upper } from './app.styled';
 const App = () => {
   const [selectedPokemon, setSelectedPokemon] = useState([]);
   const [squad, setSquad] = useState([]);
+
   return (
     <ApolloProvider client={client}>
       <Container>
@@ -16,7 +17,7 @@ const App = () => {
             <PokemonSearch setSelectedPokemon={setSelectedPokemon} />
             <PokemonDetail selectedPokemon={selectedPokemon} squad={squad} setSquad={setSquad} />
           </Upper>
-          <Squad />
+          <Squad squad={squad} setSquad={setSquad} />
         </Pokedex>
       </Container>
     </ApolloProvider>

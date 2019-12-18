@@ -68,12 +68,14 @@ const PokemonStats = ({ data, selectedMoves, removeMove }) => {
       </Stats>
       <StatsTitle>{translations.SELECTED_MOVES}</StatsTitle>
       <Moves>
-        {selectedMoves.map(move => (
-          <Move onClick={() => removeMove(move)} key={move}>
-            <span>{translations.LEVELUP}</span>
-            <span>{move}</span>
-          </Move>
-        ))}
+        {selectedMoves.map(move => {
+          return (
+            <Move onClick={() => removeMove(move.name)} key={move.name}>
+              <span>{move.learnMethod}</span>
+              <span>{move.name}</span>
+            </Move>
+          );
+        })}
       </Moves>
     </div>
   );

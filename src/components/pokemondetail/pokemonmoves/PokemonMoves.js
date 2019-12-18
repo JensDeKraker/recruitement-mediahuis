@@ -9,7 +9,7 @@ const PokemonMoves = ({ data, setSelectedMoves, selectedMoves }) => {
   const allAvailableMethods = useMemo(() => moves.reduce((accumulator, move) => (!accumulator.includes(move.learnMethod) ? [...accumulator, move.learnMethod] : accumulator), []), [moves]);
 
   const handleClick = name => {
-    const isDuplicate = selectedMoves.find(move => name.includes(move));
+    const isDuplicate = selectedMoves.find(move => name.name.includes(move.name));
     if (!isDuplicate && selectedMoves.length < 4) setSelectedMoves([...selectedMoves, name]);
   };
 
@@ -26,7 +26,7 @@ const PokemonMoves = ({ data, setSelectedMoves, selectedMoves }) => {
         {moves
           .filter(move => move.learnMethod === activeMethod)
           .map(move => (
-            <p key={move.name} onClick={() => handleClick(move.name)}>
+            <p key={move.name} onClick={() => handleClick(move)}>
               {move.name}
             </p>
           ))}

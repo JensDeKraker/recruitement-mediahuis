@@ -19,11 +19,19 @@ const PokemonDetail = ({ selectedPokemon, squad, setSquad }) => {
   }, [selectedPokemon]);
 
   const handleSave = pokemon => {
-    if (squad.length < 6) setSquad([...squad, pokemon]);
+    const { image, types } = data.Pokemon;
+    const isDuplicate = squad.find(item => pokemon.name.includes(item.name.name));
+    const remapPokemon = {
+      name: selectedPokemon,
+      image,
+      moves: selectedMoves,
+      type: types[0],
+    };
+    if (!isDuplicate && squad.length < 6) setSquad([...squad, remapPokemon]);
   };
 
   const removeMove = name => {
-    setSelectedMoves(selectedMoves.filter(move => !name.includes(move)));
+    setSelectedMoves(selectedMoves.filter(move => !name.includes(move.name)));
   };
 
   if (loading) return <p>{translations.LOADING}</p>;
