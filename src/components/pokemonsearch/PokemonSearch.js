@@ -22,7 +22,7 @@ const PokemonSearch = ({ setSelectedPokemon }) => {
       <Downshift onChange={pokemon => setSelectedPokemon(pokemon)} itemToString={item => (item ? item.name : '')}>
         {({ getInputProps, getItemProps, inputValue }) => (
           <div>
-            <SearchInput placeholder='TYPE TO FILTER' {...getInputProps()} />
+            <SearchInput placeholder={translations.PLACEHOLDER} {...getInputProps()} />
             {data &&
               data.Pokemons.filter(pokemon => !inputValue || pokemon.name.includes(inputValue)).map((item, index) => (
                 <PokemonName

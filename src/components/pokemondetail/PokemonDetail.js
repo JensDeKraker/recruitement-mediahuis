@@ -5,7 +5,6 @@ import translations from '../../utils/en.json';
 import Pokemoninfo from './pokemoninfo/PokemonInfo';
 import PokemonStats from './pokemonstats/PokemonStats';
 import { PokemonDetailContainer } from './pokemondetail.styled';
-import Squad from '../squad/Squad';
 import PokemonMoves from './pokemonmoves/PokemonMoves';
 
 const PokemonDetail = ({ selectedPokemon, squad, setSquad }) => {

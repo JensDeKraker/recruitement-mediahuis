@@ -11,6 +11,7 @@ export const SearchContainer = styled.div`
 `;
 
 export const SearchInput = styled.input`
+  width: 85%;
   padding: 1rem;
   margin: 0 auto;
   border: 0.5rem solid ${GENERAL.BLUE};
