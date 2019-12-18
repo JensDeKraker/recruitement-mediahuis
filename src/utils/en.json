@@ -1,6 +1,7 @@
 {
   "EMPTY": "Empty",
-  "LOADING": "...loading",
+  "ERROR": "There seems to be a problem:",
+  "LOADING": "Loading...",
   "NO_POKEMON_FOUND": "No pokemon where found",
   "PLACEHOLDER": "Type to filter",
   "POKEMON": "Pokemon",
